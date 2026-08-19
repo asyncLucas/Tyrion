@@ -1,3 +1,5 @@
+
+
 ﻿## ⚔️ Tyrion
 
 [![Build Status](https://dev.azure.com/lucasluizss/Tyrion.CQRS/_apis/build/status/lucasluizss.Tyrion.CQRS?branchName=master)](https://dev.azure.com/lucasluizss/Tyrion.CQRS/_build/latest?definitionId=1&branchName=master)
@@ -71,7 +73,7 @@ public sealed class CategoryCommandHandler : IRequestHandler<CategoryCommand, Ca
 {
 	public async Task<IResult<Category>> Execute(CategoryCommand command)
 	{
-		return await Result<Category>.SuccessedAsync(new Category());
+		return await Result<Category>.SuccessAsync(new Category());
 	}
 }
 
@@ -79,7 +81,7 @@ public sealed class CategoryQueryHandler : IRequestHandler<CategoryQuery, Catego
 {
 	public async Task<IResult<Category>> Execute(CategoryQuery request)
 	{
-		return await Result<Category>.SuccessedAsync(new Category());
+		return await Result<Category>.SuccessAsync(new Category());
 	}
 }
 
@@ -110,22 +112,22 @@ public sealed class ProductCommandHandler : IRequestHandler<SaveProductCommand, 
 {
 	public async Task<IResult<Product>> Execute(SaveProductCommand request)
 	{
-		return await Result<Product>.SuccessedAsync(new Product());
+		return await Result<Product>.SuccessAsync(new Product());
 	}
 
 	public async Task<IResult<Product>> Execute(UpdateProductCommand command)
 	{
-		return await Result<Product>.SuccessedAsync(new Product());
+		return await Result<Product>.SuccessAsync(new Product());
 	}
 
 	public async Task<IResult> Execute(RemoveProductCommand request)
 	{
-		return await Result.SuccessedAsync(new Product());
+		return await Result.SuccessAsync(new Product());
 	}
 
 	public async Task<IResult> Execute(InativeProductCommand request)
 	{
-		return await Result.SuccessedAsync();
+		return await Result.SuccessAsync();
 	}
 }
 ```
